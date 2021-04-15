@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Fast Cloud</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Fast Cloud
+        </a>
+    </nav>
+
+    <section class="container" id="app">
+        <form method="get" action="" class="my-5 form-control-inline">
+            <div class="form-group row">
+                <label for="nome" class="col-2 col-form-label">Nome</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" id="nome" v-model="nome" placeholder="Insira o nome">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-2 col-form-label">Email</label>
+                <div class="col-10">
+                    <input class="form-control" type="email" id="email" v-model="email" placeholder="Insira o email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="data" class="col-2 col-form-label">Data de Nascimento:</label>
+                <div class="col-10">
+                    <input class="form-control date" type="date" v-model="data" id="data">
+                    <small id="data" class="form-text text-muted ml-2" v-show="alerta == true">
+                        <i class="fas fa-exclamation-triangle"></i> Idade inválida!
+                    </small>
+                    
+                </div>
+            </div>
+
+            <div class="d-flex form-group border justify-content-center check">
+                <div class="p-2 mx-4">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" v-model="servicos[0].checked">
+                        {{servicos[0].value}}
+                    </label>
+                    <br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" v-model="servicos[1].checked"> 
+                        {{servicos[1].value}}
+                    </label>
+                    <br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" v-model="servicos[2].checked"> 
+                        {{servicos[2].value}}
+                    </label>
+                </div>
+
+                <div class="p-2 mx-4">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" v-model="servicos[3].checked">
+                        {{servicos[3].value}}
+                    </label>
+                    <br>
+                    <label class="form-check-label" >
+                        <input type="checkbox" class="form-check-input" v-model="servicos[4].checked"> 
+                        {{servicos[4].value}}
+                    </label>
+                    <br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" v-model="servicos[5].checked"> 
+                        {{servicos[5].value}}
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <button type="button" @click="add()" class="mx-2 btn btn-primary">Adicionar</button>
+                <button type="reset" class="mx-2 btn btn-info">Limpar</button>
+            </div>
+        </form>
+
+        <table class="table table-light">
+            <thead class="thead-light text-center">
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Data de Nascimento</th>
+                    <th>Serviços</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody v-html="tabela">
+                
+            </tbody>
+        </table>
+    </section>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

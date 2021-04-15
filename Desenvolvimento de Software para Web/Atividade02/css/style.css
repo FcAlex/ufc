@@ -1,0 +1,12 @@
+
+.check label {
+    cursor: pointer;
+}
+
+button[type="button"] {
+    transition: 200ms;
+}
+
+button[type="button"]:hover {
+    transform: scale(1.1);
+}

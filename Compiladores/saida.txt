@@ -1,0 +1,8 @@
+( Token, Lexema, Linha )
+( Delimitador, (, 1 )
+( Numero, 5, 1 )
+( Operador Aritmetico, +, 1 )
+( Numero, 2, 1 )
+( Delimitador, ), 1 )
+( Operador Aritmetico, /, 2 )
+( Numero, 2, 2 )
