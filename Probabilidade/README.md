@@ -4,4 +4,4 @@
 
 
 O markdown foi gerado a partir do Jutyper.\
-A pasta possui os arquivos em `.md`, `.html`, `.py` e ``.ipynb``
+A pasta possui os arquivos em `.md`, `.py` e ``.ipynb``
